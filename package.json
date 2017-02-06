@@ -1,0 +1,12 @@
+{
+  "name": "INF-H",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "webpack --config ./config/webpack.dev.js"
+  },
+  "dependencies": {
+    "webpack": "^2.2.1"
+  }
+}
