@@ -1,5 +1,4 @@
 # INF-H
-<hr />
 
 This is the Angular project which is used in the INF-H course at the Hague University.
 
