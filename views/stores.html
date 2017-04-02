@@ -1,0 +1,38 @@
+<navigation></navigation>
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="well">
+            <div class="row">
+                <div class="col-sm-5">
+                    <input type="text" class="form-control" placeholder="New store..." ng-model="newStore.name">
+                </div>
+                <div class="col-sm-5">
+                    <input type="text" class="form-control" placeholder="Comment" ng-model="newStore.comment">
+                </div>
+                <div class="col-sm-2">
+                    <button class="btn btn-block btn-success" ng-click="addStore()">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-sm-12">
+        <store ng-repeat="store in  stores track by $index" store="store" index="$index"></store>
+        <!--<table class="table table-responsive">-->
+            <!--<thead>-->
+                <!--<tr>-->
+                    <!--<th>Name</th>-->
+                    <!--<th>Comment</th>-->
+                    <!--<th>Options</th>-->
+                <!--</tr>-->
+            <!--</thead>-->
+            <!--<tbody>-->
+                <!--<tr></tr>-->
+            <!--</tbody>-->
+        <!--</table>-->
+    </div>
+</div>

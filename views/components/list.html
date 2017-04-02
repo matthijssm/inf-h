@@ -1,0 +1,27 @@
+<div class="well" style="overflow: hidden;">
+    <h5 style="float: left; margin: 1px 0 0; cursor: pointer;" ng-click="editable = true" ng-show="!editable" class="listTitle">{{list.title}}</h5>
+    <input ng-show="editable" class="form-control" ng-model="list.title" ng-keypress="editList($event)">
+    <div class="btn-group" style="float: right; margin: 0;" ng-show="!editable">
+        <button type="button" class="btn btn-xs btn-primary dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+        <ul class="dropdown-menu dropdown-menu-right" role="list">
+            <li><a ng-click="deleteList(list)">Delete</a></li>
+            <li><a ng-click="deleteDone(list)">Delete done items</a></li>
+        </ul>
+    </div>
+    <div class="clearfix"></div>
+    <hr style="margin: 12px 0;">
+    <div class="form-group">
+        <div class="checkbox" style="padding-left: 15px !important;" ng-repeat="item in list.items track by $index">
+            <label for="{{item.name + $index}}">
+                <input type="checkbox" ng-model="item.done" id="{{item.name + $index}}" ng-change="updateItem(item, $index)">
+                {{item.name}}<br>
+                <small style="color: #7b7b7b;">{{item.store.name}}</small>
+            </label>
+        </div>
+    </div>
+    <input type="text" placeholder="New item..." class="form-control" ng-model="newItem.name" ng-keypress="storeItem($event)"><br>
+    <select name="" id="" class="form-control" ng-model="selectedStore">
+        <option value="-1">Select store for items...</option>
+        <option ng-repeat="store in stores" value="{{$index}}">{{store.name}}</option>
+    </select>
+</div>

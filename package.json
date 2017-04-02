@@ -4,12 +4,25 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server --config config/webpack.dev.js"
+    "webpack": "cross-env NODE_ENV=development webpack --progress --hide-modules",
+    "dev": "cross-env NODE_ENV=development webpack --watch --progress --hide-modules --config config/webpack.config.js",
+    "hmr": "cross-env NODE_ENV=development webpack-dev-server --inline --hot",
+    "production": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "dependencies": {
-    "webpack": "^2.2.1"
+    "angular": "1.6.2",
+    "angular-local-storage": "^0.5.2",
+    "angular-mocks": "1.6.2",
+    "angular-ui-router": "1.0",
+    "bootstrap": "^3.3.7",
+    "cross-env": "^3.1.4",
+    "jasmine": "^2.5.3",
+    "jquery": "^3.1.1",
+    "webpack": "^2.2.1",
+    "webpack-mix": "^1.1.0"
   },
   "devDependencies": {
+    "jasmine": "^2.5.3",
     "webpack-dev-server": "^2.3.0"
   }
 }

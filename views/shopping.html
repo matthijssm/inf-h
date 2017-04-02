@@ -1,0 +1,17 @@
+<navigation></navigation>
+<div class="well">
+    Show done: <input type="checkbox" ng-model="showDone">
+</div>
+<div class="well">
+    <div ng-repeat="list in lists track by $index">
+        <div class="form-group" ng-repeat="item in list.items | showDone:showDone track by $index ">
+            <div class="checkbox" style="padding-left: 15px !important;">
+                <label for="{{item.name + $index}}">
+                    <input type="checkbox" ng-model="item.done" id="{{item.name + $index}}" ng-change="updateItem(item, $index, list)">
+                    {{item.name}}<br>
+                    <small style="color: #7b7b7b;">{{item.store.name}}</small>
+                </label>
+            </div>
+        </div>
+    </div>
+</div>
